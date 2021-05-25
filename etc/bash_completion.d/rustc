@@ -19,7 +19,7 @@ _rustc()
 			return 0
 			;;
 		-L|--out-dir|--sysroot)
-			_compopt_o_filenames
+#			_compopt_o_filenames
 			COMPREPLY=( $( compgen -d -- "$cur" ) )
 			return 0
 			;;
@@ -36,7 +36,7 @@ _rustc()
 			return 0
 			;;
 		-o|--dep-info)
-			_compopt_o_filenames
+#			_compopt_o_filenames
 			COMPREPLY=( $( compgen -d -- "$cur" ) $( compgen -f -- "$cur" ) )
 			return 0
 			;;
@@ -86,7 +86,7 @@ _rustc()
 		;;
 	esac
 
-	_compopt_o_filenames
+#	_compopt_o_filenames
 	COMPREPLY=( $( compgen -d -- "$cur" ) $( compgen -f -X "!$xspec" -- "$cur" ) )
 
 }
